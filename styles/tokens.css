@@ -1,0 +1,12 @@
+/* Axiom Egypt design tokens — light mode only */
+:root {
+  --color-navy: #102f47;
+  --color-teal: #8cdccd;
+  --color-flame: #ec4e20;
+  --color-honeydew: #dde6e1;
+  --color-surface: #ffffff;
+  --color-muted: #f7faf8;
+  --radius-axiom: 0.75rem;
+  --shadow-axiom: 0 10px 30px -12px rgba(16, 47, 71, 0.12);
+  --section-space: clamp(4rem, 8vw, 7.5rem);
+}

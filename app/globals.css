@@ -1,0 +1,89 @@
+@import "../styles/tokens.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --axiom-navy: #001a3f;
+  --axiom-teal: #40c4ff;
+  --axiom-flame: #ff6e20;
+  --axiom-surface: #ffffff;
+  --axiom-muted: #f8f9fa;
+  --axiom-page: #ffffff;
+  --axiom-ink: #001a3f;
+}
+
+html.dark {
+  color-scheme: dark;
+  --axiom-page: #050c18;
+  --axiom-muted: #081422;
+  --axiom-surface: #0b1524;
+  --axiom-ink: #ffffff;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  @apply bg-page font-sans text-ink antialiased transition-colors duration-300;
+}
+
+::selection {
+  background: #ff6e20;
+  color: #ffffff;
+}
+
+@layer base {
+  * {
+    @apply border-navy/10 dark:border-white/10;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display tracking-tight text-navy dark:text-white;
+  }
+
+  a {
+    @apply transition-colors duration-300 ease-axiom;
+  }
+}
+
+@layer components {
+  .section-space {
+    @apply py-12 sm:py-16 md:py-24 lg:py-30;
+  }
+
+  .eyebrow {
+    @apply text-[11px] font-bold uppercase tracking-[0.22em] text-navy dark:text-cyan;
+  }
+
+  .technical-grid {
+    background-image: theme("backgroundImage.grid-navy");
+    background-size: 48px 48px;
+  }
+
+  html.dark .technical-grid {
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  }
+
+  .focus-ring {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-midnight;
+  }
+
+  .copy {
+    @apply text-navy/70 dark:text-white/65;
+  }
+}
+
+html.dark input,
+html.dark select,
+html.dark textarea {
+  color-scheme: dark;
+}
