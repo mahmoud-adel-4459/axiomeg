@@ -54,3 +54,77 @@ export type Article = {
   image: string;
   paragraphs: string[];
 };
+
+export type PipelineGalleryCategory =
+  | "Pipeline Construction"
+  | "Water Networks"
+  | "Industrial Pipelines"
+  | "Energy Infrastructure";
+
+export type PipelineGalleryItem = {
+  id: string;
+  title: string;
+  category: PipelineGalleryCategory;
+  image: string;
+  summary: string;
+  specs: {
+    diameter?: string;
+    standard?: string;
+    grade?: string;
+    coating?: string;
+    application?: string;
+    facility?: string;
+  };
+  details: string;
+};
+
+export type GlobalAgentRegion = "Middle East & Africa" | "Europe" | "North America" | "Asia-Pacific";
+
+export type GlobalAgent = {
+  id: string;
+  country: string;
+  city: string;
+  region: GlobalAgentRegion;
+  flag: string;
+  companyName: string;
+  scope: string;
+  contactPerson: string;
+  role: string;
+  email: string;
+  phone: string;
+  address: string;
+  authorizedLines: string[];
+};
+
+export type JobDepartment = "Engineering" | "Field Operations" | "Maintenance" | "Quality & HSE";
+
+export type JobOpening = {
+  id: string;
+  title: string;
+  department: JobDepartment;
+  location: string;
+  type: string;
+  experience: string;
+  summary: string;
+  responsibilities: string[];
+  qualifications: string[];
+};
+
+export type TrainingCategory =
+  | "Technical Training"
+  | "Safety & HSE Training"
+  | "Engineering Training"
+  | "Operational Training";
+
+export type TrainingProgram = {
+  id: string;
+  title: string;
+  category: TrainingCategory;
+  summary: string;
+  duration: string;
+  targetAudience: string;
+  modules: string[];
+  certification: string;
+  deliveryMethods: string[];
+};
+

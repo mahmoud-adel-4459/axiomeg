@@ -2,9 +2,14 @@ import type {
   ApproachStep,
   Article,
   CoreService,
+  GlobalAgent,
+  JobOpening,
   NavItem,
+  PipelineGalleryCategory,
+  PipelineGalleryItem,
   Solution,
   SolutionCategory,
+  TrainingProgram,
   WhyChooseItem,
 } from "@/types";
 
@@ -44,6 +49,7 @@ export const navigation: NavItem[] = [
       { label: "Production and Testing", href: "/services/production-and-testing-equipment" },
       { label: "Power Generation", href: "/services/power-generation-equipment" },
       { label: "Pumps & Maintenance", href: "/services/pump-solutions-maintenance-services" },
+      { label: "Professional Training", href: "/services/training" },
     ],
   },
   {
@@ -57,8 +63,17 @@ export const navigation: NavItem[] = [
     ],
   },
   { label: "Industries", href: "/industries" },
-  { label: "Projects", href: "/projects" },
+  {
+    label: "Projects",
+    href: "/projects",
+    children: [
+      { label: "Featured Projects", href: "/projects" },
+      { label: "Pipeline & Tubulars Gallery", href: "/pipelines" },
+    ],
+  },
   { label: "Technology", href: "/technology" },
+  { label: "Global Agents", href: "/agents" },
+  { label: "Careers", href: "/careers" },
   { label: "Articles", href: "/articles" },
   { label: "Contact Us", href: "/contact" },
 ];
@@ -67,6 +82,8 @@ export const footerColumns = {
   company: [
     { label: "About Us", href: "/about" },
     { label: "Why choose us", href: "/why-choose-us" },
+    { label: "Global Agents", href: "/agents" },
+    { label: "Careers", href: "/careers" },
     { label: "Articles", href: "/articles" },
     { label: "Contact Us", href: "/contact" },
   ],
@@ -74,6 +91,7 @@ export const footerColumns = {
     { label: "Production and Testing", href: "/services/production-and-testing-equipment" },
     { label: "Power Generation", href: "/services/power-generation-equipment" },
     { label: "Pumps & Maintenance", href: "/services/pump-solutions-maintenance-services" },
+    { label: "Professional Training", href: "/services/training" },
   ],
   solutions: [
     { label: "Well Testing", href: "/services/production-and-testing-equipment/well-testing-services" },
@@ -83,8 +101,9 @@ export const footerColumns = {
   ],
   industries: [
     { label: "Oil & Gas", href: "/industries" },
+    { label: "Pipeline & Tubulars", href: "/pipelines" },
     { label: "Petrochemicals", href: "/industries" },
-    { label: "Power", href: "/industries" },
+    { label: "Power Generation", href: "/industries" },
   ],
 };
 
@@ -782,6 +801,598 @@ export const articles: Article[] = [
       "Selection starts with rate and pressure, then with access: skid or trailer, utilities, and how the package sits next to separators and heaters already on site.",
       "The same team that runs well testing and power generation can keep compression inside one operating envelope — fewer interfaces, clearer responsibility.",
     ],
+  },
+];
+
+export const pipelineCategories: PipelineGalleryCategory[] = [
+  "Pipeline Construction",
+  "Industrial Pipelines",
+  "Energy Infrastructure",
+  "Water Networks",
+];
+
+export const pipelineGallery: PipelineGalleryItem[] = [
+  {
+    id: "heavy-casing-yard-staging",
+    title: "Heavy-Wall API 5CT Casing & Tubular Yard Logistics",
+    category: "Pipeline Construction",
+    image: "/images/pipelines/casing-storage-yard.jpg",
+    summary:
+      "Strategic staging and inspection of high-grade carbon steel seamless casing bundles prepared for immediate Western Desert drilling mobilization.",
+    specs: {
+      diameter: '7" to 13-3/8" OD',
+      standard: "API Spec 5CT / 5L PSL2",
+      grade: "L80-1 / P110 / Q125",
+      coating: "Corrosion-Resistant Mill Varnish & Heavy Protectors",
+      application: "High-Pressure Deep Well Casing & Field Gathering",
+      facility: "Suez Free Zone Staging Terminal",
+    },
+    details:
+      "Each bundle is systematically tagged, color-coded by grade, fitted with heavy-duty composite thread protectors, and subjected to 100% full-length ultrasonic and magnetic particle testing before transport.",
+  },
+  {
+    id: "high-density-tubular-racking",
+    title: "High-Density Tubular Racking & Weatherproof Storage",
+    category: "Industrial Pipelines",
+    image: "/images/pipelines/warehouse-pipe-stack.jpg",
+    summary:
+      "Specialized indoor vertical and tier storage safeguarding premium connection tubing and drill pipe from atmospheric corrosion and thread damage.",
+    specs: {
+      diameter: '2-7/8" to 5-1/2" OD',
+      standard: "API Spec 5CT / Premium Gas-Tight Connections",
+      grade: "13Cr / Super 13Cr / L80-SS",
+      coating: "Internal Plastic Coating (IPC) for Corrosive Gas",
+      application: "Sour Service (H2S & CO2) Gas Well Completions",
+      facility: "Suez Central Covered Tubular Warehouse",
+    },
+    details:
+      "Environmentally controlled warehouse facility ensuring zero moisture condensation on critical seal faces. Each joint retains complete metallurgical mill test traceability and barcode tracking.",
+  },
+  {
+    id: "crane-marshaling-cross-country",
+    title: "Heavy Crane Lifting & Cross-Country Trunkline Marshalling",
+    category: "Energy Infrastructure",
+    image: "/images/pipelines/yard-logistics-crane.jpg",
+    summary:
+      "Heavy mobile crane loading bays handling large-diameter trunkline pipe sections and manifold assemblies for regional transmission grids.",
+    specs: {
+      diameter: '16" to 42" OD',
+      standard: "API Spec 5L Grade X52 / X65 / X70 PSL2",
+      grade: "X65 / X70 High Yield Strength",
+      coating: "3-Layer Polyethylene (3LPE) & Heavy FBE",
+      application: "Cross-Country Natural Gas & Crude Transmission Grids",
+      facility: "Suez Maritime Logistics Marshalling Bay",
+    },
+    details:
+      "Features calibrated spreader beam crane operations and certified nylon sling rigging to safeguard external 3LPE anti-corrosion and concrete weight coatings during high-throughput loading onto flatbed convoys.",
+  },
+  {
+    id: "paved-pipe-depot-inventory",
+    title: "Interlocked Paved Depot & Long-Term Pipeline Staging",
+    category: "Pipeline Construction",
+    image: "/images/pipelines/paved-pipe-depot.jpg",
+    summary:
+      "Engineered all-weather paved facility eliminating soil subsidence and ground moisture during multi-rig casing supply contracts.",
+    specs: {
+      diameter: '4-1/2" to 9-5/8" OD',
+      standard: "API 5L / ASTM A106 Grade B",
+      grade: "Carbon Steel Line Pipe & Intermediate Casing",
+      coating: "Fusion Bonded Epoxy (FBE) & Beveled End Guards",
+      application: "Flowline Networks & Refinery Interconnecting Headers",
+      facility: "Suez Free Zone Heavy Staging Complex",
+    },
+    details:
+      "Engineered hardwood dunnage and heavy-duty UV-stabilized strapping isolate each tier. Ongoing wall-thickness monitoring guarantees field-ready integrity upon site arrival.",
+  },
+  {
+    id: "precision-tubular-inspection",
+    title: "Precision Thread Gauging & QA/QC Casing Inspection",
+    category: "Industrial Pipelines",
+    image: "/images/pipelines/tubular-inspection.jpg",
+    summary:
+      "Certified ASNT Level II & III inspectors executing optical thread profiling, torque shoulder verification, and full-length drift testing.",
+    specs: {
+      diameter: 'All API & Proprietary Premium Connections',
+      standard: "API RP 5A5 / DS-1 Cat 3-5 Standards",
+      grade: "Full Metallurgical Range (Carbon & Chrome Alloys)",
+      coating: "Thread Compound Sealant & Recapping Verification",
+      application: "High-Pressure Gas Wellhead Production Strings",
+      facility: "Mobile NDT Inspection Field Unit",
+    },
+    details:
+      "Comprehensive non-destructive testing regimen combining wet fluorescent magnetic particle inspection (MPI), ultrasonic wall gauging, and laser profilometry to ensure 100% leak-free makeup in demanding wellbores.",
+  },
+  {
+    id: "industrial-water-network-header",
+    title: "High-Pressure Produced Water Injection & Transfer Systems",
+    category: "Water Networks",
+    image: "/images/solutions/pumps.jpg",
+    summary:
+      "High-pressure corrosion-resistant piping networks, manifold skids, and booster stations engineered for oilfield waterflood and disposal operations.",
+    specs: {
+      diameter: '6" to 14" OD',
+      standard: "ASME B31.3 / B31.4 & API 15HR",
+      grade: "Duplex Stainless Steel & High-Density Polyethylene (HDPE)",
+      coating: "Internal Glass Flake Lining / Fusion Bonded Epoxy",
+      application: "Reservoir Pressure Maintenance & Produced Water Disposal",
+      facility: "Western Desert Field Waterflood Facility",
+    },
+    details:
+      "Designed for aggressive high-salinity brines and corrosive gases. Fabricated and pre-tested with automated hydrotesting skids to guarantee zero environmental discharge.",
+  },
+  {
+    id: "cross-facility-manifold-integration",
+    title: "Early Production Facility (EPF) Piping & Manifold Headers",
+    category: "Energy Infrastructure",
+    image: "/images/solutions/epf.jpg",
+    summary:
+      "Modular high-pressure piping assemblies and interconnecting headers linking wellhead chokes, separation units, and fiscal metering skids.",
+    specs: {
+      diameter: '3" to 12" ANSI 600# to 2500#',
+      standard: "ASME B31.3 / API 6A & NACE MR0175",
+      grade: "ASTM A333 Grade 6 (Low Temp) & A106 Gr. B",
+      coating: "Polyurethane Industrial Thermal Coating",
+      application: "Fast-Track Field Monetization & Central Processing",
+      facility: "Gulf of Suez EPF Processing Complex",
+    },
+    details:
+      "Pre-fabricated in certified skid modules for rapid bolt-together assembly on site, significantly reducing field welding hours and ensuring immediate compliance with hazardous area electrical standards.",
+  },
+  {
+    id: "wellhead-surface-testing-flowlines",
+    title: "Temporary Well Testing High-Pressure Flowline Rig-Up",
+    category: "Pipeline Construction",
+    image: "/images/solutions/well-testing.jpg",
+    summary:
+      "Hammer-union Chiksan high-pressure lines, emergency shutdown manifolds, and sand trap piping for extended exploration well tests.",
+    specs: {
+      diameter: '2" to 4" Fig 1502 / 1002 Hammer Unions',
+      standard: "API 16C / NACE MR0175 (H2S Service)",
+      grade: "Alloy Steel 4130 Integral Forged",
+      coating: "Banding Color-Coded Pressure Rating System",
+      application: "Exploration Well Testing & Clean-up Operations",
+      facility: "Nile Delta Onshore Testing Spread",
+    },
+    details:
+      "Inspected, recertified, and pressure-tested every 6 months to 15,000 PSI test pressure. Supported by certified pipe anchors and safety whip-checks across the entire flowline spread.",
+  },
+];
+
+export const globalAgents: GlobalAgent[] = [
+  {
+    id: "egypt-hq-suez",
+    country: "Egypt",
+    city: "Cairo & Suez",
+    region: "Middle East & Africa",
+    flag: "🇪🇬",
+    companyName: "Axiom Egypt Petroleum Services (Headquarters)",
+    scope: "Principal Headquarters & Free Zone Central Logistics Staging Terminal",
+    contactPerson: "Eng. Tamer Mostafa",
+    role: "Managing Director & Technical Operations",
+    email: "info@Axiomeg.com",
+    phone: "+20 2 27542566",
+    address: "8A/2, El Laselky Division, New Maadi, Cairo / Free Zone Suez",
+    authorizedLines: [
+      "Production Testing & Early Production Facilities (EPF)",
+      "Wellhead Separation, Heaters & Compression Packages",
+      "API 5CT / 5L Tubular Goods & Drill Pipe Staging",
+      "Field Overhaul, Precision NDT & Technical Training",
+    ],
+  },
+  {
+    id: "uae-gulf-rep",
+    country: "United Arab Emirates",
+    city: "Abu Dhabi & Dubai",
+    region: "Middle East & Africa",
+    flag: "🇦🇪",
+    companyName: "Gulf Energy Dynamics FZE",
+    scope: "Authorized Gulf Representative for Offshore Spreads & EPC Procurement",
+    contactPerson: "Rashid Al-Mansouri",
+    role: "Regional Director — MENA",
+    email: "gulf.representative@axiomeg.com",
+    phone: "+971 2 645 8820",
+    address: "Al Maryah Tower, Abu Dhabi Global Market, Abu Dhabi, UAE",
+    authorizedLines: [
+      "Offshore Production Testing Equipment",
+      "Gas Compressor Packages (85 HP – 10,000 HP)",
+      "Heavy-Wall Subsea Piping & Casing Solutions",
+    ],
+  },
+  {
+    id: "saudi-arabia-rep",
+    country: "Saudi Arabia",
+    city: "Al Khobar & Dammam",
+    region: "Middle East & Africa",
+    flag: "🇸🇦",
+    companyName: "PetroRawabi Industrial Services Ltd.",
+    scope: "Authorized Kingdom Agent for In-Kingdom Petroleum Services & Equipment",
+    contactPerson: "Fahad Al-Ghamdi",
+    role: "Country Operations Liaison",
+    email: "ksa.representative@axiomeg.com",
+    phone: "+966 13 889 4510",
+    address: "King Abdulaziz Road, Al Khobar 31952, Kingdom of Saudi Arabia",
+    authorizedLines: [
+      "Deep Well Artificial Lift & Triplex Pumping Skids",
+      "High-Pressure Separators & Line Heaters",
+      "Rotational Equipment Maintenance & Predictive Diagnostics",
+    ],
+  },
+  {
+    id: "usa-houston-hub",
+    country: "United States",
+    city: "Houston, Texas",
+    region: "North America",
+    flag: "🇺🇸",
+    companyName: "Apex Energy Global LLC",
+    scope: "North American Technology Partner & OEM Sourcing Office",
+    contactPerson: "David R. Sterling",
+    role: "VP International Supply Chain",
+    email: "usa.representative@axiomeg.com",
+    phone: "+1 713 589 7720",
+    address: "Energy Corridor, 14800 Memorial Drive, Houston, TX 77079, USA",
+    authorizedLines: [
+      "API Certified OEM Equipment Sourcing",
+      "Gas Turbine & Reciprocating Compressor Packages",
+      "Advanced Ultrasonic Testing & Smart Pigging Technology",
+    ],
+  },
+  {
+    id: "uk-aberdeen-rep",
+    country: "United Kingdom",
+    city: "Aberdeen & London",
+    region: "Europe",
+    flag: "🇬🇧",
+    companyName: "Caledonia Petroleum Technologies Ltd.",
+    scope: "European Offshore Engineering & QA/QC Audit Representation",
+    contactPerson: "Graeme MacIntyre",
+    role: "Technical Engineering Director",
+    email: "uk.representative@axiomeg.com",
+    phone: "+44 1224 982 340",
+    address: "Riverside Business Center, Dyce, Aberdeen AB21 0GT, Scotland, UK",
+    authorizedLines: [
+      "Offshore Rig Inspection & Integrity Management",
+      "IWCF & IADC Accredited Training Syllabi Coordination",
+      "Environmental Emissions Containment & Vapor Recovery Systems",
+    ],
+  },
+  {
+    id: "germany-frankfurt-rep",
+    country: "Germany",
+    city: "Celle & Frankfurt",
+    region: "Europe",
+    flag: "🇩🇪",
+    companyName: "Bavaria Petro-Equip GmbH",
+    scope: "Precision Valves, Instrumentation & High-Pressure Fluid Technology",
+    contactPerson: "Hans-Jürgen Weber",
+    role: "Director of International Sales",
+    email: "germany.representative@axiomeg.com",
+    phone: "+49 69 7191 880",
+    address: "Industriepark Höchst, D-65926 Frankfurt am Main, Germany",
+    authorizedLines: [
+      "Subsea & Surface Choke Valves and Actuators",
+      "Automated Multiphase Flow Meters (MPFM)",
+      "High-Pressure Triplex & Quintuplex Reciprocating Pumps",
+    ],
+  },
+  {
+    id: "italy-milan-rep",
+    country: "Italy",
+    city: "Milan",
+    region: "Europe",
+    flag: "🇮🇹",
+    companyName: "EuroFlange & Tubulars S.r.l.",
+    scope: "Heavy Forged Fittings, Pipeline Induction Bends & Flanges",
+    contactPerson: "Marco Benetti",
+    role: "Commercial Export Manager",
+    email: "italy.representative@axiomeg.com",
+    phone: "+39 02 8739 4210",
+    address: "Via Montenapoleone 8, 20121 Milano, Italy",
+    authorizedLines: [
+      "Heavy Forged High-Pressure Flanges & Pipeline Bends",
+      "Gas Turbines Component Refurbishment & Balancing",
+      "Coating Inspection & Metallurgical Laboratory Verification",
+    ],
+  },
+  {
+    id: "singapore-apac-hub",
+    country: "Singapore",
+    city: "Singapore",
+    region: "Asia-Pacific",
+    flag: "🇸🇬",
+    companyName: "Merlion Offshore & Energy Pte Ltd",
+    scope: "Asia-Pacific Tubular Supply & Marine Logistics Agency",
+    contactPerson: "Kenneth Chen",
+    role: "APAC Regional Coordinator",
+    email: "apac.representative@axiomeg.com",
+    phone: "+65 6712 9088",
+    address: "Marina Bay Financial Centre, Tower 2, Singapore 018983",
+    authorizedLines: [
+      "Seamless Casing & Line Pipe Mill Allotments",
+      "Marine Offshore Crane Equipment",
+      "Floating Production Logistics & Spares Expediting",
+    ],
+  },
+];
+
+export const culturePillars = [
+  {
+    title: "Zero-Harm HSE Culture",
+    text: "Safety isn't a checklist; it's our foundational license to operate. Every engineer and field technician holds Stop Work Authority.",
+    icon: "ShieldCheck",
+  },
+  {
+    title: "Field-Proven Engineering",
+    text: "We bridge the gap between heavy mechanical hardware and real-time field data, solving complex production bottlenecks onshore and offshore.",
+    icon: "Wrench",
+  },
+  {
+    title: "Continuous Professional Mastery",
+    text: "From Suez equipment workshops to international certifications, we invest in our people so they lead the industry with modern standards.",
+    icon: "GraduationCap",
+  },
+  {
+    title: "Empowering Team Spirit",
+    text: "High-trust teamwork across engineering, quality assurance, logistics, and field crews, united by pride in powering Egypt's energy future.",
+    icon: "Users",
+  },
+];
+
+export const careerPerks = [
+  {
+    title: "Competitive Compensation & Field Allowances",
+    text: "Industry-leading tax-free salary structures complemented by hazard, offshore, and per-diem rotation allowances.",
+  },
+  {
+    title: "Comprehensive Health & Life Insurance",
+    text: "Full premium family health coverage, medical evacuation insurance, and comprehensive wellness plans.",
+  },
+  {
+    title: "Global Certification Sponsorship",
+    text: "Fully funded international training programs including IWCF, IADC, ASNT, and API certifications.",
+  },
+  {
+    title: "Rotational Flexibility",
+    text: "Balanced rotation rosters (e.g. 28/28 or 14/14 for field personnel) and modern hybrid office accommodations.",
+  },
+];
+
+export const jobOpenings: JobOpening[] = [
+  {
+    id: "sr-petroleum-engineer",
+    title: "Senior Petroleum Production Engineer",
+    department: "Engineering",
+    location: "New Maadi HQ (with Western Desert field rotations)",
+    type: "Full-Time",
+    experience: "7+ Years",
+    summary:
+      "Lead well testing campaigns, optimize surface separator performance, and design early production facility process packages for major operating clients.",
+    responsibilities: [
+      "Supervise surface well testing packages, multiphase separator operations, and flare system combustion efficiency.",
+      "Interpret pressure transient analysis (PTA), PVT fluid samples, and build comprehensive well performance reports.",
+      "Interface with client reservoir teams to select choke sizes, heater duty, and pressure drops during cleanup flows.",
+      "Review process flow diagrams (PFDs) and P&IDs for new modular EPF skids.",
+    ],
+    qualifications: [
+      "B.Sc. in Petroleum, Chemical, or Mechanical Engineering.",
+      "Demonstrated track record running 3-phase and 4-phase test separators.",
+      "Valid IWCF Level 4 Well Control certification is an advantage.",
+      "Fluent technical English and commanding leadership presence on site.",
+    ],
+  },
+  {
+    id: "qaqc-pipeline-inspector",
+    title: "QA/QC Pipeline & Tubular Goods Inspector",
+    department: "Quality & HSE",
+    location: "Free Zone Suez Terminal & Field Sites",
+    type: "Full-Time",
+    experience: "5+ Years",
+    summary:
+      "Oversee receipt inspection, ultrasonic wall thickness testing, thread gauging, and non-destructive examination of API casing, tubing, and line pipe.",
+    responsibilities: [
+      "Conduct visual, dimensional, optical, and magnetic particle inspection (MPI) on casing, drill pipe, and line pipe.",
+      "Audit mill test certificates (MTCs) against API Spec 5CT, 5L, and client proprietary metallurgic specifications.",
+      "Oversee third-party NDT crews and manage discrepancy quarantine reports.",
+      "Inspect internal/external anti-corrosion coatings (FBE, 3LPE) and thread compound seal integrity.",
+    ],
+    qualifications: [
+      "ASNT Level II certification in Ultrasonic (UT) and Magnetic Particle Testing (MT).",
+      "Strong background in API RP 5A5 and DS-1 standards.",
+      "Minimum 5 years of verifiable experience in oilfield tubular storage and inspection yards.",
+      "High attention to detail and zero-tolerance attitude for non-compliant equipment.",
+    ],
+  },
+  {
+    id: "rotating-equipment-specialist",
+    title: "Mechanical Specialist — Gas Compressors & High-Pressure Pumps",
+    department: "Maintenance",
+    location: "Field Operations / Suez Overhaul Shop",
+    type: "Rotational (28/28)",
+    experience: "6+ Years",
+    summary:
+      "Execute preventive maintenance, teardown, overhaul, laser alignment, and dynamic testing of reciprocating compressors and triplex injection pumps.",
+    responsibilities: [
+      "Perform precision overhaul of Ariel/Caterpillar/Waukesha reciprocating gas compressor packages (85 HP to 5,000 HP).",
+      "Execute dynamic vibration analysis, bearing temperature logging, and laser shaft alignment on high-pressure pumps.",
+      "Diagnose mechanical seal failures, valve unloader issues, and lube oil contamination.",
+      "Lead emergency turnaround and maintenance shutdown teams to minimize client production deferment.",
+    ],
+    qualifications: [
+      "Technical Diploma or B.Sc. in Mechanical Engineering.",
+      "Hands-on expertise with compressor cylinders, packing cases, crankshafts, and heavy diesel engines.",
+      "Certified vibration analyst (ISO 18436 Cat II) is preferred.",
+      "Capable of independent troubleshooting in remote field conditions.",
+    ],
+  },
+  {
+    id: "scada-instrumentation-engineer",
+    title: "Automation, Instrumentation & SCADA Engineer",
+    department: "Engineering",
+    location: "New Maadi HQ with Field Mobilizations",
+    type: "Full-Time",
+    experience: "4+ Years",
+    summary:
+      "Design, program, and commission PLC/RTU control systems, safety instrumented systems (SIS), and automated multiphase flow measurement skids.",
+    responsibilities: [
+      "Configure Siemens, Allen-Bradley, and Schneider PLC hardware for automated emergency shutdown (ESD) systems.",
+      "Calibrate smart pressure, temperature, differential transmitters, and Coriolis flowmeters in hazardous zones.",
+      "Implement remote telemetry protocols (Modbus, OPC UA) transmitting real-time field data to client cloud portals.",
+      "Lead Pre-Startup Safety Reviews (PSSR) for instrumented safety loops and gas detection sensors.",
+    ],
+    qualifications: [
+      "B.Sc. in Electrical, Electronics, or Mechatronics Engineering.",
+      "Proven field experience with ATEX / IECEx certified instrumentation.",
+      "Proficient in ladder logic, functional block diagrams, and SCADA HMI development.",
+    ],
+  },
+  {
+    id: "hse-operations-manager",
+    title: "HSE Field Operations Manager",
+    department: "Quality & HSE",
+    location: "Field Sites Across Egypt (Western Desert & Gulf of Suez)",
+    type: "Full-Time",
+    experience: "8+ Years",
+    summary:
+      "Champion Axiom's Zero-Harm culture across all operational spreads, client rig sites, and staging yards in accordance with ISO 14001 and ISO 45001.",
+    responsibilities: [
+      "Develop project-specific Health, Safety & Environmental Execution Plans and Job Safety Analyses (JSA).",
+      "Lead daily safety stand-downs, permit-to-work (PTW) audits, and incident root cause investigations (RCA).",
+      "Conduct H2S emergency drills, breathing apparatus readiness inspections, and fire suppression audits.",
+      "Liaise with EGPC, foreign operating joint ventures, and civil authorities during compliance audits.",
+    ],
+    qualifications: [
+      "NEBOSH International Diploma in Occupational Health & Safety or equivalent.",
+      "Extensive knowledge of Egyptian Petroleum Sector (EGPC) HSE regulations.",
+      "Minimum 8 years in onshore/offshore oil & gas field operations.",
+      "Strong interpersonal communication and coaching mindset.",
+    ],
+  },
+];
+
+export const trainingPrograms: TrainingProgram[] = [
+  {
+    id: "technical-well-testing-production",
+    title: "Surface Well Testing & Production Facility Operations",
+    category: "Technical Training",
+    summary:
+      "Intensive practical training on surface test trees, choke manifolds, 3-phase test separators, line heaters, and accurate data acquisition.",
+    duration: "5 Days (40 Hours) or 10 Days Advanced",
+    targetAudience: "Production Engineers, Well Testing Technicians, Field Operators & Shift Supervisors",
+    modules: [
+      "Well testing objectives: Exploration vs. Development clean-up and extended flow tests",
+      "Choke manifold operations, erosion monitoring, and critical flow calculations",
+      "Separation physics: Residence time, weir settings, demister pads, and level control loops",
+      "Indirect line heater heat transfer, expansion coils, and burner management systems (BMS)",
+      "Accurate fluid sampling (PVT bottles, pressurized gas cylinders) and field shrinkage tests",
+      "Practical Suez Yard workshop: Live equipment line-up, pressure testing, and troubleshooting",
+    ],
+    certification: "Axiom Certified Well Testing Specialist (Accredited Certificate)",
+    deliveryMethods: ["Suez Free Zone Staging Yard", "Client Operating Facility", "Virtual Theory Sessions"],
+  },
+  {
+    id: "hse-iwcf-safety-mastery",
+    title: "IWCF / IADC Well Control & Rig Site Safety Operations",
+    category: "Safety & HSE Training",
+    summary:
+      "International standard well control principles, kick detection, shut-in procedures, H2S toxic gas containment, and emergency response.",
+    duration: "5 Days (Classroom & Drilling Simulator)",
+    targetAudience: "Drillers, Toolpushers, Rig Superintendents, Company Men & Petroleum Engineers",
+    modules: [
+      "Hydrostatic pressure, formation pressure, fracture gradient, and primary barrier integrity",
+      "Causes of kicks: Swabbing, lost circulation, gas-cut mud, and abnormal pressure influxes",
+      "Kick detection indicators: Flow line sensors, pit gain alarms, and pump stroke tracking",
+      "Shut-in protocols: Hard shut-in vs. soft shut-in procedures on surface and subsea BOPs",
+      "Well kill methods: Wait and Weight method, Driller's method, and Volumetric stripping",
+      "H2S contingency planning: SCBA apparatus donning, gas plume modeling, and victim triage",
+    ],
+    certification: "IWCF / IADC Accredited Well Control Certification Preparation",
+    deliveryMethods: ["Axiom Training Center", "Rig Site Onboard Coaching"],
+  },
+  {
+    id: "engineering-epf-pipeline-design",
+    title: "Early Production Facility (EPF) & Pipeline Process Engineering",
+    category: "Engineering Training",
+    summary:
+      "Advanced engineering course covering modular facility sizing, pipeline hydraulic simulations, ASME piping codes, and fiscal custody transfer.",
+    duration: "4 Days (32 Hours)",
+    targetAudience: "Facilities Engineers, Process Designers, Pipeline Integrity Engineers & Project Managers",
+    modules: [
+      "Fast-track field development strategies and modular EPF equipment selection",
+      "Multiphase flow hydraulics: Beggs-Brill & OLGA calculations, slug catchers, and pigging",
+      "Piping & Pipeline Design codes: ASME B31.3 (Process Piping) and ASME B31.4 / B31.8 (Transportation)",
+      "Corrosion mitigation in sour service: NACE MR0175, chemical inhibitor batching, and corrosion coupons",
+      "Crude oil stabilization, Reid Vapor Pressure (RVP) control, and electrostatic desalter systems",
+      "Process safety: Relief valve (PSV) sizing, flare header backpressure, and HAZOP methodologies",
+    ],
+    certification: "Certified Energy Facilities & Pipeline Engineer",
+    deliveryMethods: ["Cairo Training Headquarters", "Corporate On-Site"],
+  },
+  {
+    id: "operational-compressor-pump-overhaul",
+    title: "Industrial Compressors & High-Pressure Pumps Field Maintenance",
+    category: "Operational Training",
+    summary:
+      "Hands-on mechanical maintenance workshop covering reciprocating compressors, positive displacement pumps, laser alignment, and condition monitoring.",
+    duration: "5 Days (Full Workshop Immersion)",
+    targetAudience: "Mechanical Maintenance Technicians, Millwrights, Reliability Engineers & Plant Mechanics",
+    modules: [
+      "Reciprocating compressor anatomy: Cylinders, crossheads, connecting rods, valves, and unloader systems",
+      "Centrifugal and multi-stage triplex pumps: Impeller balancing, mechanical seal flushing plans (API 682)",
+      "Precision laser shaft alignment, thermal growth offset, and soft-foot elimination",
+      "Condition monitoring fundamentals: Vibration spectral analysis, bearing temperature thresholds, and oil analysis",
+      "Preventive and predictive maintenance scheduling to eliminate catastrophic unplanned trips",
+      "Hands-on teardown in Suez maintenance facility: Valve replacement, piston ring gap check, and clearance measurement",
+    ],
+    certification: "Certified Rotating Machinery Maintenance Technician",
+    deliveryMethods: ["Suez Mechanical Workshop", "Client Plant Yard"],
+  },
+];
+
+export const trainingMethodology = [
+  {
+    step: "01",
+    title: "Foundational Theory & Physics",
+    text: "Deep-dive into thermo-hydraulic fundamentals, international API/ASME/ISO standards, and engineering formulas led by senior industry veterans.",
+  },
+  {
+    step: "02",
+    title: "Hands-On Suez Yard Workshop",
+    text: "Trainees move directly from the classroom to our full-scale equipment yard in the Suez Free Zone, touching real separators, pumps, and valves.",
+  },
+  {
+    step: "03",
+    title: "Field Scenarios & Emergency Drills",
+    text: "Simulating realistic upset conditions: sudden gas kicks, valve seat washouts, instrument air failures, and H2S leak evacuations.",
+  },
+  {
+    step: "04",
+    title: "Rigorous Assessment & Certification",
+    text: "Formal theoretical examinations and practical competency check-rides before issuing verified, accredited industry certificates.",
+  },
+];
+
+export const trainingStats = [
+  { value: "3,500+", label: "Engineers & Technicians Trained" },
+  { value: "98.6%", label: "First-Time Certification Pass Rate" },
+  { value: "40+", label: "Operating Energy Clients Served" },
+  { value: "100%", label: "Hands-On Equipment Access in Suez" },
+];
+
+export const trainingIndustries = [
+  {
+    name: "Upstream Exploration & Production",
+    desc: "Rig crews, well test operators, and petroleum production engineers operating high-pressure desert and offshore wells.",
+  },
+  {
+    name: "Midstream Pipelines & Transportation",
+    desc: "Cross-country pipeline operators, pumping station crews, and gas compressor maintenance technicians.",
+  },
+  {
+    name: "Downstream Refining & Petrochemicals",
+    desc: "Plant process operators, rotating machinery specialists, and turnaround shutdown contractors.",
+  },
+  {
+    name: "Offshore Marine & Subsea Terminals",
+    desc: "Platform personnel, barge engineers, and marine logistics specialists requiring strict safety compliance.",
   },
 ];
 
