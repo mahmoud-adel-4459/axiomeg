@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { articles, categories, siteConfig, solutions } from "@/lib/content";
+import { articles, categories, industries, siteConfig, solutions } from "@/lib/content";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
@@ -28,6 +28,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...categories.map((item) => `/services/${item.slug}`),
     ...solutions.map((item) => `/services/${item.category}/${item.slug}`),
     ...articles.map((item) => `/articles/${item.slug}`),
+    ...industries.map((item) => `/industries/${item.slug}`),
   ].map((path) => ({
     url: `${siteConfig.url}${path}`,
     lastModified: new Date(),

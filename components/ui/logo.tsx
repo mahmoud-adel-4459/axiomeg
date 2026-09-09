@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { cn } from "@/utils/cn";
 
 type LogoProps = {
@@ -7,42 +8,59 @@ type LogoProps = {
   light?: boolean;
 };
 
-function Mark({ size }: { size: number }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 36 44" fill="none" aria-hidden="true">
-      <path
-        d="M18 1.2c-2.2 6.4-8.6 9.4-9.2 16.4-.1 3.6 2.5 6.2 5.8 6.8-3.2-4.8.2-8.4 2.4-11.6 2.2 3.2 5.6 6.8 2.4 11.6 3.3-.6 5.9-3.2 5.8-6.8C27.6 10.6 21.2 7.6 18 1.2Z"
-        fill="#EF4423"
-      />
-      <path d="M5.2 42.4 18 14.6 30.8 42.4h-7.2L18 28.2 12.4 42.4H5.2Z" fill="#EF4423" />
-    </svg>
-  );
-}
-
-export function Logo({ className, compact = false, footer = false }: LogoProps) {
-  const word = "AXIOM";
-
-  return (
-    <span className={cn("inline-flex shrink-0 items-center gap-2", className)}>
-      <Mark size={footer ? 40 : 32} />
-      {compact ? (
+export function Logo({
+  className,
+  compact = false,
+  footer = false,
+  light = false,
+}: LogoProps) {
+  // If compact is requested, render the official flame symbol
+  if (compact) {
+    return (
+      <span className={cn("inline-flex shrink-0 items-center", className)}>
+        <Image
+          src="/images/home/axiom-flame-mark.png"
+          alt="Axiom Egypt Symbol"
+          width={36}
+          height={48}
+          priority
+          className="h-9 w-auto object-contain"
+        />
         <span className="sr-only">Axiom Egypt</span>
-      ) : (
-        <span className="leading-none">
-          <span className="relative block font-display text-[1.2rem] font-extrabold tracking-[0.14em] text-navy dark:text-white">
-            {word}
-            <span
-              aria-hidden="true"
-              className="pointer-events-none absolute left-0 top-0 overflow-hidden text-flame"
-              style={{ width: "0.42em" }}
-            >
-              {word}
-            </span>
-          </span>
-          <span className="mt-0.5 block text-right text-[9px] font-semibold tracking-[0.42em] text-navy/70 dark:text-white/70">
-            EGYPT
-          </span>
-        </span>
+      </span>
+    );
+  }
+
+  // Full official logo with flame emblem, AXIOM EGYPT title, and Petroleum Services subtitle
+  return (
+    <span className={cn("inline-flex shrink-0 items-center", className)}>
+      {/* Light mode logo (Orange flame + Dark navy AXIOM EGYPT + Orange subtitle) */}
+      <Image
+        src="/images/home/axiom-logo-light.png"
+        alt="Axiom Egypt — Petroleum Services & Commercial Agencies"
+        width={210}
+        height={61}
+        priority
+        className={cn(
+          "w-auto object-contain transition-opacity duration-200",
+          footer ? "h-12 sm:h-14" : "h-10 sm:h-11",
+          light ? "block" : "block dark:hidden"
+        )}
+      />
+
+      {/* Dark mode logo (Orange flame + High-contrast white AXIOM EGYPT + Orange subtitle) */}
+      {!light && (
+        <Image
+          src="/images/home/axiom-logo-dark.png"
+          alt="Axiom Egypt — Petroleum Services & Commercial Agencies"
+          width={210}
+          height={61}
+          priority
+          className={cn(
+            "hidden w-auto object-contain transition-opacity duration-200 dark:block",
+            footer ? "dark:h-12 sm:dark:h-14" : "dark:h-10 sm:dark:h-11"
+          )}
+        />
       )}
     </span>
   );

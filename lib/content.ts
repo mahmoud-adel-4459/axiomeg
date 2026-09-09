@@ -3,6 +3,7 @@ import type {
   Article,
   CoreService,
   GlobalAgent,
+  IndustryItem,
   JobOpening,
   NavItem,
   PipelineGalleryCategory,
@@ -29,8 +30,8 @@ export const siteConfig = {
   ctaLabel: "Request Consultation",
   ctaHref: "/contact",
   infoLabel: "Explore Solutions",
-  logo: "/images/home/logo.webp",
-  footerLogo: "/images/home/logo-footer.png",
+  logo: "/images/home/axiom-logo-light.png",
+  footerLogo: "/images/home/axiom-logo-dark.png",
   teamImage: "/images/home/team-axiom.jpeg",
   statsBg: "/images/slides/post-cover.jpg",
   mapEmbed:
@@ -699,28 +700,357 @@ export const quoteOptions = [
 export const blogIntro =
   "Stay updated on the latest trends and insights in petroleum services. Explore industry news, analyses and expert opinions to fuel your knowledge and stay ahead in the energy sector.";
 
-export const industries = [
+export const industries: IndustryItem[] = [
   {
+    slug: "oil-and-gas",
     title: "Oil & Gas",
-    text: "Upstream, midstream and downstream facilities requiring testing, production and maintenance support.",
+    tagline: "Integrated Wellhead, Production & Asset Integrity Solutions for Upstream & Midstream Operators",
+    text: "Upstream, midstream and downstream facilities requiring precision well testing, early production systems, API rig inspections, and turnaround maintenance.",
     image: "/images/slides/slide01.jpg",
+    heroImage: "/images/slides/slide01.jpg",
+    overview:
+      "Axiom Egypt delivers mission-critical technical support to exploration and production operators across the Western Desert, Gulf of Suez, and Nile Delta. From well testing and early production facilities (EPF) to heavy-duty rotating equipment overhauls and API 6A choke manifold servicing, we safeguard asset integrity and optimize recovery rates under extreme desert and sour gas conditions.",
+    challenges: [
+      {
+        title: "High Pressure & Sour Gas (H2S) Corrosion",
+        text: "Extreme wellbore pressures combined with aggressive corrosive constituents require metallurgy-matched API 6A hardware and continuous ultrasonic wall thickness monitoring.",
+        stat: "Up to 15,000 PSI",
+      },
+      {
+        title: "Rig Downtime & Unplanned Non-Productive Time (NPT)",
+        text: "Remote drill sites in the Western Desert face costly delays when hoisting, BOP, or power generation components fail unexpectedly without pre-positioned spares.",
+        stat: "-35% NPT Target",
+      },
+      {
+        title: "Early Monetization of Remote Discoveries",
+        text: "Operators need rapid tie-back and early production facilities to generate cash flow while permanent processing infrastructure is engineered and permitted.",
+        stat: "90-Day Deployment",
+      },
+    ],
+    solutions: [
+      {
+        title: "Well Production Testing & Data Acquisition",
+        text: "High-accuracy multiphase flow meters, test separators, and data recording trailers for reservoir performance characterization.",
+        badge: "Production Testing",
+      },
+      {
+        title: "API-Certified Rig & Hoisting Inspections",
+        text: "Comprehensive non-destructive examination (NDE), electromagnetic flaw detection, and API 4G mast structural certifications.",
+        badge: "Rig Integrity",
+      },
+      {
+        title: "Early Production Facilities (EPF) Deployment",
+        text: "Skid-mounted modular separators, dehydration units, and crude storage systems engineered for rapid field deployment.",
+        badge: "Modular EPF",
+      },
+      {
+        title: "Emergency Rotating Equipment Overhaul",
+        text: "24/7 technical dispatch for multi-stage centrifugal pumps, gas lift compressors, and diesel generator prime movers.",
+        badge: "Mechanical Services",
+      },
+    ],
+    equipment: [
+      { name: "API 6A Choke Manifolds", specs: "5,000 to 15,000 PSI, H2S Trim, Dual Choke Design", tag: "Flow Control" },
+      { name: "3-Phase Test Separators", specs: "1,440 PSI WP, 10,000 BPD fluid, 30 MMSCFD gas capacity", tag: "Separation" },
+      { name: "Multiphase Flowmeter Skids", specs: "Real-time oil/gas/water continuous flow monitoring", tag: "Measurement" },
+      { name: "Mobile NDE Inspection Units", specs: "Ultrasonic, Eddy Current, Magnetic Particle Testing", tag: "Asset Integrity" },
+    ],
+    kpis: [
+      { label: "Uptime Reliability", value: "99.8%", helper: "Across active field contracts" },
+      { label: "Inspected Rigs", value: "120+", helper: "Certified under API specifications" },
+      { label: "Field Technicians", value: "85+", helper: "Certified mechanical & NDE engineers" },
+      { label: "Emergency Response", value: "< 4 Hrs", helper: "Mobilization from central hubs" },
+    ],
+    caseStudy: {
+      title: "Fast-Track Well Testing & Early Production in Western Desert",
+      operator: "Major Joint Venture Operator (EGPC Concession)",
+      description:
+        "Axiom mobilized a complete 1,440 PSI 3-phase testing package along with high-pressure choke manifold within 72 hours of sudden appraisal discovery, enabling immediate reservoir evaluation and 4,500 BOPD production tie-in.",
+      impact: "Reduced customer NPT by 28% and accelerated first oil commercialization by 45 days.",
+    },
   },
   {
+    slug: "petrochemicals",
     title: "Petrochemicals",
-    text: "Process units and reliability programs for continuous industrial plants.",
+    tagline: "Reliability Engineering, Valve Overhaul & Turnaround Services for Continuous Process Complexes",
+    text: "Process units and reliability programs for continuous industrial plants, ethylene complexes, fertilizers, and refining assets.",
     image: "/images/slides/slide03.jpg",
+    heroImage: "/images/slides/slide03.jpg",
+    overview:
+      "Axiom Egypt supports Egypt's expanding refining and petrochemical clusters in Alexandria, Suez, and Damietta. We specialize in plant turnaround management, severe-service control valve maintenance, heat exchanger retubing, high-pressure pump overhauls, and predictive vibration analysis for non-stop industrial operations.",
+    challenges: [
+      {
+        title: "Tight Turnaround Windows & Schedule Risk",
+        text: "Scheduled plant turnarounds demand 24/7 round-the-clock shift staffing with zero tolerance for safety incidents or delayed restart milestones.",
+        stat: "Zero Restart Delay",
+      },
+      {
+        title: "Severe Process Chemistry & Thermal Cycling",
+        text: "Aromatic hydrocarbons, polymer slurries, and caustic washes degrade seals, packings, and valve seats if not maintained with strict metallurgical standards.",
+        stat: "API 600 / 6D Specs",
+      },
+      {
+        title: "Rotating Machinery Criticality",
+        text: "Centrifugal pumps and boiler feedwater pumps running continuously require micro-vibration diagnostic surveillance to prevent catastrophic bearing seizures.",
+        stat: "24/7 Vibration Analytics",
+      },
+    ],
+    solutions: [
+      {
+        title: "Turnaround Mechanical & Valve Maintenance",
+        text: "Complete valve overhaul, lapping, hydrostatic testing, and packing replacement for gate, globe, check, and control valves.",
+        badge: "Turnaround Services",
+      },
+      {
+        title: "High-Pressure Process Pump Rebuilds",
+        text: "Precision shaft alignment, dynamic balancing, mechanical seal upgrades, and performance curve testing.",
+        badge: "Pump Engineering",
+      },
+      {
+        title: "Predictive Asset Health Monitoring",
+        text: "Vibration analysis, thermographic imaging, and lube oil sampling to detect mechanical degradation before failures occur.",
+        badge: "Predictive Analytics",
+      },
+      {
+        title: "Heat Exchanger Bundle Pulling & Retubing",
+        text: "Hydro-jetting cleaning, tube bundle extraction, eddy current testing, and re-tubing for shell-and-tube exchangers.",
+        badge: "Static Equipment",
+      },
+    ],
+    equipment: [
+      { name: "Automated Valve Test Benches", specs: "Up to 24-inch valve capacity, 10,000 PSI hydro/gas test", tag: "Valve Testing" },
+      { name: "Laser Shaft Alignment Tools", specs: "Sub-micron accuracy for coupled turbomachinery", tag: "Precision Alignment" },
+      { name: "Multi-Channel Vibration Analyzers", specs: "FFT spectrum analysis & bearing condition monitoring", tag: "Diagnostics" },
+      { name: "Ultra-High Pressure Hydrojetters", specs: "20,000 PSI cleaning pressure for chemical deposits", tag: "Cleaning" },
+    ],
+    kpis: [
+      { label: "Turnaround Completion", value: "100%", helper: "On-schedule milestone adherence" },
+      { label: "Valves Serviced", value: "3,500+", helper: "Tested to API 598 standards" },
+      { label: "Unplanned Outages", value: "-42%", helper: "Post-maintenance reliability record" },
+      { label: "Safety Record", value: "0 LTI", helper: "Over 500,000 man-hours in plants" },
+    ],
+    caseStudy: {
+      title: "Major Ethylene Complex Annual Shutdown Overhaul",
+      operator: "Leading Egyptian Petrochemical Complex (Alexandria)",
+      description:
+        "Mobilized a team of 45 specialized valve technicians, millwrights, and certified inspectors to overhaul 380 control and isolation valves within a strict 14-day turnaround envelope.",
+      impact: "Completed 36 hours ahead of target schedule with 100% first-time hydrostatic pass rate.",
+    },
   },
   {
+    slug: "power-generation",
     title: "Power Generation",
-    text: "Diesel generation and compression equipment for energy and utilities operators.",
+    tagline: "Prime, Standby & Modular Power Systems for Remote Industrial Sites and Energy Utilities",
+    text: "Heavy-duty diesel generation, gas turbine support, synchronizing switchgear, and temporary power solutions for remote and industrial grids.",
     image: "/images/solutions/diesel.jpg",
+    heroImage: "/images/solutions/diesel.jpg",
+    overview:
+      "Axiom Egypt provides industrial-grade power generation solutions tailored for energy operators facing grid instability or remote un-electrified oilfields. Our capabilities span the provision, commissioning, fuel management, and overhaul of heavy-duty diesel and gas gensets ranging from 250 kVA to multi-megawatt synchronized power packages.",
+    challenges: [
+      {
+        title: "Grid Isolation in Desert & Offshore Fields",
+        text: "Drilling rigs, artificial lift pumping stations, and camp facilities depend entirely on self-generated prime power where an outage shuts down entire production fields.",
+        stat: "100% Off-Grid Ready",
+      },
+      {
+        title: "Extreme Ambient Temperatures (50°C+)",
+        text: "Egyptian desert heat causes generator derating, cooling radiator clogging, and turbocharger stress requiring specialized tropicalized power units.",
+        stat: "Tropicalized Radiators",
+      },
+      {
+        title: "Fuel Efficiency & High Operating Cost",
+        text: "Diesel logistics to remote Western Desert sites represent high OPEX; precise electronic fuel metering and optimal load balancing are vital.",
+        stat: "-15% Fuel Savings",
+      },
+    ],
+    solutions: [
+      {
+        title: "Prime Power Generation Packages",
+        text: "Turnkey containerized diesel and gas generators equipped with sound attenuation, heavy filtration, and automatic synchronization.",
+        badge: "Turnkey Power",
+      },
+      {
+        title: "Load Banking & Synchronized Switchgear",
+        text: "Custom automatic transfer switches (ATS), paralleling controls, and reactive load testing to prevent wet-stacking.",
+        badge: "Switchgear & Controls",
+      },
+      {
+        title: "Preventive Engine Overhauls & Rebuilds",
+        text: "Complete top-end and major overhauls for Cummins, Caterpillar, Perkins, and MTU industrial engines by certified mechanics.",
+        badge: "Engine Overhauls",
+      },
+      {
+        title: "Remote SCADA & Fuel Monitoring",
+        text: "Satellite/cellular telemetry for fuel levels, oil pressure, coolant temperature, and electrical harmonics.",
+        badge: "Telemetry",
+      },
+    ],
+    equipment: [
+      { name: "Containerized Power Modules", specs: "500 kVA to 2,000 kVA prime rated, 50/60 Hz switchable", tag: "Generation" },
+      { name: "Intelligent Paralleling Panels", specs: "Up to 32 gensets synchronization with PLC load sharing", tag: "Automation" },
+      { name: "Resistive/Reactive Load Banks", specs: "1,500 kW capacity with step-load digital automation", tag: "Testing" },
+      { name: "Bulk Fuel Filtration Skids", specs: "Water separation and 2-micron particle removal", tag: "Fuel Quality" },
+    ],
+    kpis: [
+      { label: "Continuous Availability", value: "99.9%", helper: "For critical life-support & drilling grids" },
+      { label: "Installed Megawatts", value: "45+ MW", helper: "Across oilfields & industrial plants" },
+      { label: "Engine Overhauls", value: "250+", helper: "Zero in-service catastrophic failures" },
+      { label: "Mean Time to Repair", value: "< 2 Hrs", helper: "With dedicated on-site technician crews" },
+    ],
+    caseStudy: {
+      title: "Continuous 6 MW Island Grid for Remote Western Desert Gathering Station",
+      operator: "Joint Exploration & Production Operator",
+      description:
+        "Designed, delivered, synchronized, and operated a 6 MW prime power system consisting of four 1,500 kVA containerized units with automatic N+1 redundancy and dual-redundant fuel filtration.",
+      impact: "Maintained 99.98% electrical availability over 18 consecutive months of desert operations.",
+    },
   },
   {
+    slug: "marine-and-offshore",
     title: "Marine & Offshore",
-    text: "Platform and coastal terminal support with brownfield constraints.",
+    tagline: "Platform Integrity, Riser Maintenance & Coastal Terminal Solutions for Harsh Marine Conditions",
+    text: "Offshore platform support, coastal terminal maintenance, subsea pipeline inspection coordination, and brownfield asset life extension.",
     image: "/images/solutions/compressor.jpg",
+    heroImage: "/images/solutions/compressor.jpg",
+    overview:
+      "Axiom Egypt supports offshore energy operations in the Gulf of Suez and the Mediterranean shelf. From shallow-water wellhead platforms to deepwater gas terminal interfaces, our offshore teams provide topsides piping inspection, explosion-proof compression packages, marine pump maintenance, and cathodic protection survey support.",
+    challenges: [
+      {
+        title: "Hyper-Corrosive Saline Atmosphere",
+        text: "Marine salt spray, splash-zone wave action, and high humidity accelerate galvanic corrosion on topsides structural steel, flanges, and electrical enclosures.",
+        stat: "C5-M Marine Coating",
+      },
+      {
+        title: "Restricted Deck Space & Crane Limits",
+        text: "Offshore platforms have strict footprint and weight ceilings; equipment packages must be modular, lightweight, and ATEX/IECEx certified.",
+        stat: "DNV 2.7-1 Certified",
+      },
+      {
+        title: "Complex Offshore Logistics & Weather Windows",
+        text: "Crew boat and helicopter transfers demand rigorous HUET certification, tight scheduling, and first-time-right tooling mobilization.",
+        stat: "Zero Mobilization Aborts",
+      },
+    ],
+    solutions: [
+      {
+        title: "Topsides Piping & Vessel Integrity Inspections",
+        text: "Phased array ultrasonic testing (PAUT), corrosion mapping, and remaining life assessment for pressurized marine piping.",
+        badge: "Offshore NDE",
+      },
+      {
+        title: "ATEX Zone 1/2 Certified Compression Packages",
+        text: "Explosion-proof air compressors and nitrogen boosters for pipeline pigging and well gas lift on offshore decks.",
+        badge: "Certified Packages",
+      },
+      {
+        title: "Offshore Slurry & Seawater Pump Overhauls",
+        text: "Duplex and super duplex stainless steel seawater lift pumps, firewater pumps, and condensate reinjection systems.",
+        badge: "Marine Pumps",
+      },
+      {
+        title: "Riser & Splash-Zone Protection Monitoring",
+        text: "Cathodic protection potential surveys, sacrificial anode assessments, and structural thickness verifications.",
+        badge: "Asset Integrity",
+      },
+    ],
+    equipment: [
+      { name: "DNV 2.7-1 Offshore Compressor Skids", specs: "ATEX Zone 2, 750 CFM, 150 PSI, spark arrestor", tag: "Marine Certified" },
+      { name: "Phased Array PAUT / TOFD Units", specs: "Advanced weld inspection & corrosion mapping", tag: "Ultrasonic NDE" },
+      { name: "Sea-Water Lift Multi-Stage Pumps", specs: "Super Duplex SS, high-head, anti-cavitation design", tag: "Offshore Pumps" },
+      { name: "Digital CP Potential Survey Meters", specs: "Underwater probe compatibility for platform jackets", tag: "Corrosion Survey" },
+    ],
+    kpis: [
+      { label: "Offshore Safety Record", value: "Zero TRIR", helper: "Strict adherence to offshore safety rules" },
+      { label: "Certified Offshore Engineers", value: "100%", helper: "HUET & BOSIET compliant staff" },
+      { label: "Platforms Serviced", value: "35+", helper: "In Gulf of Suez & Mediterranean fields" },
+      { label: "Equipment Compliance", value: "DNV 2.7-1", helper: "Certified offshore lift containers" },
+    ],
+    caseStudy: {
+      title: "Gulf of Suez Topsides Piping Integrity Assessment & Refurbishment",
+      operator: "Offshore Petroleum Operating Consortium",
+      description:
+        "Conducted a comprehensive risk-based inspection of 12 kilometers of offshore topsides piping across three connected production platforms, utilizing digital radiographic and phased array testing.",
+      impact: "Identified and remediated 14 critical wall-thinning zones, preventing potential hydrocarbon leaks.",
+    },
+  },
+  {
+    slug: "pipeline-infrastructure",
+    title: "Pipeline Infrastructure",
+    tagline: "Cross-Country Energy Pipelines, High-Pressure Gas Gathering & Water Distribution Networks",
+    text: "Long-distance pipeline construction support, hydrostatic testing, pigging, valve station servicing, and municipal water line rehabilitation.",
+    image: "/images/pipelines/pipelines-hero.jpg",
+    heroImage: "/images/pipelines/pipelines-hero.jpg",
+    overview:
+      "Axiom Egypt's pipeline infrastructure division delivers complete midstream and municipal utility solutions. Backed by specialized pipe yards, heavy mechanical trenching support, automated hydrostatic testing skids, and API 6D pipeline ball valve maintenance, we ensure seamless hydrocarbon and water transmission across Egypt's extensive infrastructure grid.",
+    challenges: [
+      {
+        title: "Desert Terrain Soil Shifting & Mechanical Stress",
+        text: "Long-distance pipelines traversing sand dunes and rocky plateaus require precise trench bedding, stress-relief joints, and deep cathodic protection.",
+        stat: "100% Joint Verification",
+      },
+      {
+        title: "High-Pressure Hydrostatic Integrity Verification",
+        text: "New and existing pipelines require API 1110 certified pressure holding tests with calibrated electronic deadweight gauges.",
+        stat: "API 1110 Standards",
+      },
+      {
+        title: "Internal Corrosion & Paraffin Deposition",
+        text: "Waxy crude and wet gas pipelines lose transport throughput without regular mechanical and chemical pigging schedules.",
+        stat: "+25% Flow Efficiency",
+      },
+    ],
+    solutions: [
+      {
+        title: "Hydrostatic Testing & Dewatering Services",
+        text: "High-volume filling pumps, positive displacement pressure pumps, and digital chart recorders for certified pipeline testing.",
+        badge: "Hydrotest",
+      },
+      {
+        title: "Intelligent & Utility Pigging Operations",
+        text: "Foam, disc, and caliper pigging for debris cleaning, batch corrosion inhibitor treatment, and internal geometry profiling.",
+        badge: "Pigging & Cleaning",
+      },
+      {
+        title: "API 6D Trunnion Ball Valve Servicing",
+        text: "In-line valve seat sealing, emergency sealant injection, stem seal renewal, and actuator calibration without pipeline shutdown.",
+        badge: "Valve Stations",
+      },
+      {
+        title: "Tubular Yard & Material Logistics",
+        text: "Storage, tallying, visual inspection, and dispatch of ERW, seamless, and ductile iron line pipes from dedicated holding facilities.",
+        badge: "Tubular Management",
+      },
+    ],
+    equipment: [
+      { name: "Triplex Hydrotest Pump Skids", specs: "Up to 10,000 PSI test pressure with digital data loggers", tag: "Testing Skids" },
+      { name: "Bidirectional Pipeline Pigs", specs: "6-inch to 48-inch diameter with polyurethane discs", tag: "Pigging Equipment" },
+      { name: "Emergency Valve Sealant Pumps", specs: "10,000 PSI hydraulic injection for zero-leak seal restoration", tag: "Valve Maintenance" },
+      { name: "Pipe Handling & Vacuum Lifting Units", specs: "Safe loading/unloading of coated line pipes up to 12 tons", tag: "Material Handling" },
+    ],
+    kpis: [
+      { label: "Pipelines Tested", value: "850+ km", helper: "Hydrostatically certified without incident" },
+      { label: "Pipe Sizes Handled", value: '4" to 48"', helper: "Carbon steel, CRA, and ductile iron" },
+      { label: "Valve Station Repairs", value: "450+", helper: "API 6D mainline ball valves" },
+      { label: "Trenchless & Open Trench", value: "100%", helper: "Compliance with EGPC standards" },
+    ],
+    caseStudy: {
+      title: "Hydrostatic Testing and Nitrogen Dewatering of 42-Inch Gas Trunkline",
+      operator: "National Gas Transmission Utility",
+      description:
+        "Mobilized three high-capacity triplex pump units and membrane nitrogen generators to complete hydrostatic testing and dry dewatering to -40°C dewpoint on a 65-kilometer desert transmission pipeline.",
+      impact: "Delivered commissioned pipeline 5 days ahead of schedule, facilitating early gas grid injection.",
+    },
   },
 ];
+
+export function getIndustryBySlug(slug: string): IndustryItem | undefined {
+  return industries.find((item) => item.slug === slug);
+}
+
+export function getAllIndustrySlugs(): string[] {
+  return industries.map((item) => item.slug);
+}
+
 
 export const technologyItems = [
   {

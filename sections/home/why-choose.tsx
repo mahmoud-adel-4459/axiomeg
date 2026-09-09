@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Clock3, Cpu, Handshake, Users } from "lucide-react";
-import { leaderQuote, siteConfig, whyChoose } from "@/lib/content";
+import { leaderQuote, whyChoose } from "@/lib/content";
 import { fadeUp, stagger } from "@/lib/motion";
 import { Badge } from "@/components/ui/badge";
 import { Container } from "@/components/ui/container";
@@ -19,14 +19,23 @@ export function HomeWhyChoose() {
       <Container>
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.15 }} variants={stagger}>
           <motion.div variants={fadeUp} className="grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr]">
-            <div className="relative min-h-[20rem] overflow-hidden rounded-axiom-xl">
+            <div className="relative min-h-[22rem] overflow-hidden rounded-2xl shadow-lg sm:min-h-[26rem]">
               <Image
-                src={siteConfig.teamImage}
-                alt="Axiom Egypt team"
+                src="/images/about/hq-boardroom.jpg"
+                alt="Axiom Egypt Executive Boardroom and Command Center"
                 fill
                 sizes="(min-width: 1024px) 40vw, 100vw"
-                className="object-cover"
+                className="object-cover transition duration-700 hover:scale-105"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-transparent" />
+              <div className="absolute bottom-4 left-4 right-4 text-white">
+                <span className="rounded-full bg-flame/90 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white">
+                  Executive Suite
+                </span>
+                <p className="mt-1 text-xs font-semibold text-white/90">
+                  Axiom Headquarters • New Maadi, Cairo
+                </p>
+              </div>
             </div>
             <div id="about-us">
               <Badge>Why choose us</Badge>

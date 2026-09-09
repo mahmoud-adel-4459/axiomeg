@@ -128,3 +128,50 @@ export type TrainingProgram = {
   deliveryMethods: string[];
 };
 
+export type IndustryChallenge = {
+  title: string;
+  text: string;
+  stat?: string;
+};
+
+export type IndustrySolution = {
+  title: string;
+  text: string;
+  badge?: string;
+};
+
+export type IndustryEquipment = {
+  name: string;
+  specs: string;
+  tag: string;
+};
+
+export type IndustryKpi = {
+  label: string;
+  value: string;
+  helper?: string;
+};
+
+export type IndustryCaseStudy = {
+  title: string;
+  operator: string;
+  description: string;
+  impact: string;
+};
+
+export type IndustryItem = {
+  slug: string;
+  title: string;
+  tagline: string;
+  text: string;
+  image: string;
+  heroImage?: string;
+  overview: string;
+  challenges: IndustryChallenge[];
+  solutions: IndustrySolution[];
+  equipment: IndustryEquipment[];
+  kpis: IndustryKpi[];
+  caseStudy?: IndustryCaseStudy;
+};
+
+

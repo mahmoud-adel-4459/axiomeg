@@ -94,17 +94,16 @@ export function Preloader() {
                 </span>
               </div>
 
-              {/* Bottom Caption inside image */}
+              {/* Bottom Caption inside image with Official Logo */}
               <div className="absolute inset-x-0 bottom-0 p-4 text-left sm:p-5">
-                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-cyan">
-                  Petroleum & Energy Services
-                </p>
-                <h3 className="mt-0.5 text-base font-bold tracking-tight text-white sm:text-lg">
-                  Axiom Egypt
-                </h3>
-                <p className="mt-0.5 text-xs text-white/75 sm:text-[13px]">
-                  Empowering Energy • Delivering Excellence
-                </p>
+                <Image
+                  src="/images/home/axiom-logo-dark.png"
+                  alt="Axiom Egypt — Petroleum Services & Commercial Agencies"
+                  width={220}
+                  height={64}
+                  priority
+                  className="h-11 w-auto object-contain drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)] sm:h-12"
+                />
               </div>
             </motion.div>
 
