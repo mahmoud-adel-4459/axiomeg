@@ -74,9 +74,12 @@ export default function AboutPage() {
             </div>
 
             <blockquote className="mt-6 rounded-axiom-xl border border-navy/8 bg-honeydew-50 p-6 dark:border-white/10 dark:bg-midnight-50">
-              <p className="leading-8 text-navy/75 dark:text-white/70">“{leaderQuote.text}”</p>
-              <footer className="mt-5 text-sm font-semibold text-navy dark:text-white">
-                — {leaderQuote.author}
+              <p className="mb-3 font-bold text-navy dark:text-white underline">{leaderQuote.title}</p>
+              <p className="leading-8 text-navy/75 dark:text-white/70">"{leaderQuote.text}"</p>
+              <footer className="mt-5 text-sm text-navy dark:text-white">
+                <span className="font-semibold">{leaderQuote.author}</span>
+                <br />
+                <span className="text-xs text-navy/60 dark:text-white/55">{leaderQuote.role}</span>
               </footer>
             </blockquote>
           </MotionReveal>

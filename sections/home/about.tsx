@@ -83,9 +83,12 @@ export function HomeAbout() {
           </p>
 
           <blockquote className="mt-6 border-l-4 border-flame pl-5 text-sm leading-7 text-navy/75 dark:text-white/70 bg-honeydew-50/60 p-4 rounded-r-xl dark:bg-midnight-50/60">
-            “{leaderQuote.text}”
-            <cite className="mt-2 block not-italic font-semibold text-navy dark:text-white">
-              — {leaderQuote.author}
+            <p className="mb-3 font-bold text-navy dark:text-white underline">{leaderQuote.title}</p>
+            "{leaderQuote.text}"
+            <cite className="mt-3 block not-italic text-navy dark:text-white">
+              <span className="font-semibold">{leaderQuote.author}</span>
+              <br />
+              <span className="text-xs text-navy/60 dark:text-white/55">{leaderQuote.role}</span>
             </cite>
           </blockquote>
 

@@ -36,14 +36,14 @@ export function Logo({
     <span className={cn("inline-flex shrink-0 items-center", className)}>
       {/* Light mode logo (Orange flame + Dark navy AXIOM EGYPT + Orange subtitle) */}
       <Image
-        src="/images/home/axiom-logo-light.png"
+        src="/images/home/axiom-logo-new.jpg"
         alt="Axiom Egypt — Petroleum Services & Commercial Agencies"
-        width={210}
-        height={61}
+        width={280}
+        height={80}
         priority
         className={cn(
           "w-auto object-contain transition-opacity duration-200",
-          footer ? "h-12 sm:h-14" : "h-10 sm:h-11",
+          footer ? "h-14 sm:h-16" : "h-11 sm:h-12",
           light ? "block" : "block dark:hidden"
         )}
       />
@@ -51,14 +51,14 @@ export function Logo({
       {/* Dark mode logo (Orange flame + High-contrast white AXIOM EGYPT + Orange subtitle) */}
       {!light && (
         <Image
-          src="/images/home/axiom-logo-dark.png"
+          src="/images/home/axiom-logo-dark-new.jpg"
           alt="Axiom Egypt — Petroleum Services & Commercial Agencies"
-          width={210}
-          height={61}
+          width={280}
+          height={80}
           priority
           className={cn(
             "hidden w-auto object-contain transition-opacity duration-200 dark:block",
-            footer ? "dark:h-12 sm:dark:h-14" : "dark:h-10 sm:dark:h-11"
+            footer ? "dark:h-14 sm:dark:h-16" : "dark:h-11 sm:dark:h-12"
           )}
         />
       )}

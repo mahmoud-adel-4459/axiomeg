@@ -44,8 +44,13 @@ export function HomeWhyChoose() {
                 We strive to develop according to the demands of the market and market trends.
               </p>
               <blockquote className="mt-6 rounded-axiom-xl border border-navy/8 bg-honeydew-50 p-6 dark:border-white/10 dark:bg-midnight-50">
-                <p className="text-sm leading-7 text-navy/75 dark:text-white/70">“{leaderQuote.text}”</p>
-                <footer className="mt-4 text-sm font-semibold text-navy dark:text-white">— {leaderQuote.author}</footer>
+                <p className="mb-3 text-sm font-bold text-navy dark:text-white underline">{leaderQuote.title}</p>
+                <p className="text-sm leading-7 text-navy/75 dark:text-white/70">"{leaderQuote.text}"</p>
+                <footer className="mt-4 text-sm text-navy dark:text-white">
+                  <span className="font-semibold">{leaderQuote.author}</span>
+                  <br />
+                  <span className="text-xs text-navy/60 dark:text-white/55">{leaderQuote.role}</span>
+                </footer>
               </blockquote>
             </div>
           </motion.div>

@@ -30,8 +30,8 @@ export const siteConfig = {
   ctaLabel: "Request Consultation",
   ctaHref: "/contact",
   infoLabel: "Explore Solutions",
-  logo: "/images/home/axiom-logo-light.png",
-  footerLogo: "/images/home/axiom-logo-dark.png",
+  logo: "/images/home/axiom-logo-new.jpg",
+  footerLogo: "/images/home/axiom-logo-dark-new.jpg",
   teamImage: "/images/home/team-axiom.jpeg",
   statsBg: "/images/slides/post-cover.jpg",
   mapEmbed:
@@ -44,13 +44,23 @@ export const navigation: NavItem[] = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
   {
-    label: "Services",
+    label: "Products & Services",
     href: "/services",
     children: [
       { label: "Production and Testing", href: "/services/production-and-testing-equipment" },
       { label: "Power Generation", href: "/services/power-generation-equipment" },
       { label: "Pumps & Maintenance", href: "/services/pump-solutions-maintenance-services" },
       { label: "Professional Training", href: "/services/training" },
+      { label: "Conductor & Casing", href: "/services" },
+      { label: "Casing Accessories", href: "/services" },
+      { label: "Production Tubing", href: "/services" },
+      { label: "Drilling Tubular", href: "/services" },
+      { label: "Drilling Bits", href: "/services" },
+      { label: "Well head & x-mass tree", href: "/services" },
+      { label: "Down hole tools", href: "/services" },
+      { label: "Repair production, wellhead & x-mass tree valves", href: "/services" },
+      { label: "Pressure test equipment", href: "/services" },
+      { label: "Repair BOP", href: "/services" },
     ],
   },
   {
@@ -130,13 +140,13 @@ export const heroSlides = [
   {
     eyebrow: "Petroleum Services",
     title: "Expert Support. Field-Ready Delivery.",
-    text: "From maintenance to consultancy and management, we have the expertise and resources to support all aspects of your petroleum operations.",
+    text: "From Supply, maintenance to consultancy and management, we have the expertise and resources to support all aspects of your petroleum (oil & gas) operations.",
     image: "/images/slides/slide03.jpg",
   },
   {
     eyebrow: "Production Testing",
     title: "Well Testing. Measured Results.",
-    text: "Customized well testing packages with separators, choke manifolds and trailer-mounted equipment for land operations.",
+    text: "Customized well testing packages with separators, Tanks, choke manifolds and trailer-mounted equipment for land operations.",
     image: "/images/slides/post-cover.jpg",
   },
   {
@@ -637,8 +647,10 @@ export const whyChoose: WhyChooseItem[] = [
 ];
 
 export const leaderQuote = {
+  title: "Our Progress – CEO Letter",
   text: "I am pleased to see that we are well on our way to meeting our goals for the year and making improvements in every area. We are continuing to build on our strong foundation of excellent customer service and unparalleled performance. Our company is characterized by qualitative products and services, professional skills and team spirit. In order to provide maximum customer satisfaction, we strive to develop according to the demands of the market and market trends.",
-  author: "Mr Mohamed Saber",
+  author: "Mohamed Saber",
+  role: "Chief Executive Officer",
 };
 
 export const approach: ApproachStep[] = [

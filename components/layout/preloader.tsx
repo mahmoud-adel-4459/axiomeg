@@ -97,10 +97,10 @@ export function Preloader() {
               {/* Bottom Caption inside image with Official Logo */}
               <div className="absolute inset-x-0 bottom-0 p-4 text-left sm:p-5">
                 <Image
-                  src="/images/home/axiom-logo-dark.png"
+                  src="/images/home/axiom-logo-dark-new.jpg"
                   alt="Axiom Egypt — Petroleum Services & Commercial Agencies"
-                  width={220}
-                  height={64}
+                  width={280}
+                  height={80}
                   priority
                   className="h-11 w-auto object-contain drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)] sm:h-12"
                 />
